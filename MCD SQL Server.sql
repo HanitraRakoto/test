@@ -101,7 +101,7 @@ CREATE TABLE [ClientTrajet]
 	[cliId] uniqueidentifier NOT NULL,
 	[traId] uniqueidentifier NOT NULL,
 	[ctrNombrePersonne] smallint NOT NULL,
-	[ctrTypePaiement] varchar(10) NOT NULL
+	[ctrTypePaiement] varchar(11) NOT NULL
 )
 GO
 
@@ -184,7 +184,7 @@ ALTER TABLE [ClientTrajet]
 GO
 
 ALTER TABLE [ClientTrajet] 
- ADD CONSTRAINT [CHK_ClientTrajet_TypePaiement] CHECK (ctrTypePaiement in ('par espèce','par NFC'))
+ ADD CONSTRAINT [CHK_ClientTrajet_TypePaiement] CHECK (ctrTypePaiement in ('par espèce','par QR Code'))
 GO
 
 ALTER TABLE [Trajet] 
